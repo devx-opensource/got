@@ -296,6 +296,7 @@ __Note:__ If [`Retry-After`](https://developer.mozilla.org/en-US/docs/Web/HTTP/H
 */
 export interface RetryOptions {
 	limit: number;
+        strict: boolean;
 	methods: Method[];
 	statusCodes: number[];
 	errorCodes: string[];
@@ -610,6 +611,7 @@ const defaultInternals: Options['_internals'] = {
 	parseJson: JSON.parse,
 	stringifyJson: JSON.stringify,
 	retry: {
+                strict: true,
 		limit: 2,
 		methods: [
 			'GET',
